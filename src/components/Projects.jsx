@@ -95,7 +95,7 @@ function Projects() {
         },
         {
           name: "CSS3",
-          icon: <SiCss3 />
+          icon: null
         }
       ],
 
