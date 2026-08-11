@@ -45,8 +45,7 @@ function Projects() {
         }
       ],
 
-      github:null
-        ,
+      github: null,
 
       demo: null
     },
@@ -75,7 +74,8 @@ function Projects() {
       github:
         "https://github.com/aravind78250/contract-risk-analyzer",
 
-      demo: "https://contract-risk-analyzer-bot.streamlit.app/"
+      demo:
+        "https://contract-risk-analyzer-bot.streamlit.app/"
     },
 
     {
@@ -122,7 +122,6 @@ function Projects() {
 
         </div>
 
-
         <motion.div
           className="projects-grid"
           initial={{ opacity: 0, y: 50 }}
@@ -144,16 +143,13 @@ function Projects() {
                 0{index + 1}
               </div>
 
-
               <h3>
                 {project.title}
               </h3>
 
-
               <p className="project-description">
                 {project.description}
               </p>
-
 
               <div className="technology-list">
 
@@ -180,20 +176,20 @@ function Projects() {
 
               </div>
 
-
               <div className="project-links">
 
                 {/* GitHub button */}
 
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGithub />
-                  GitHub
-                </a>
-
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub />
+                    GitHub
+                  </a>
+                )}
 
                 {/* Live Demo button */}
 
