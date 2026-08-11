@@ -42,8 +42,8 @@ function Projects() {
         }
       ],
 
-      github: "https://github.com/",
-      demo: "#"
+      github: "https://github.com/aravind78250/my-portfolio",
+      demo: "https://my-portfolio-gamma-lyart-24.vercel.app/"
     },
 
     {
