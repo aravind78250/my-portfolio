@@ -1,0 +1,48 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+main {
+  padding-top: 0;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-heading p {
+  color: #38bdf8;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.section-heading h2 {
+  font-size: 45px;
+}
+
+.section-heading h2 span {
+  color: #38bdf8;
+}
+
+@media (max-width: 600px) {
+  .section-heading h2 {
+    font-size: 36px;
+  }
+}
