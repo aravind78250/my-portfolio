@@ -13,7 +13,7 @@ import {
   SiMysql,
   SiStreamlit,
   SiJavascript,
-  SiCss3
+  
 } from "react-icons/si";
 
 import "./Projects.css";
