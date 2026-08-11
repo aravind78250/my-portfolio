@@ -4,13 +4,16 @@ import {
   FaGithub,
   FaExternalLinkAlt,
   FaPython,
-  FaDatabase
+  FaDatabase,
+  FaReact
 } from "react-icons/fa";
 
 import {
   SiFastapi,
   SiMysql,
-  SiStreamlit
+  SiStreamlit,
+  SiJavascript,
+  SiCss3
 } from "react-icons/si";
 
 import "./Projects.css";
@@ -42,8 +45,10 @@ function Projects() {
         }
       ],
 
-      github: "https://github.com/aravind78250/my-portfolio",
-      demo: "https://my-portfolio-gamma-lyart-24.vercel.app/"
+      github:null
+        ,
+
+      demo: null
     },
 
     {
@@ -67,22 +72,56 @@ function Projects() {
         }
       ],
 
-      github: "https://github.com/aravind78250/aravind78250-contract-risk-analysis-bot",
-      demo: "#"
+      github:
+        "https://github.com/aravind78250/contract-risk-analyzer",
+
+      demo: "https://contract-risk-analyzer-bot.streamlit.app/"
+    },
+
+    {
+      title: "Personal Portfolio",
+
+      description:
+        "A modern responsive personal portfolio website showcasing my skills, projects, education, experience, certifications, and contact information.",
+
+      technologies: [
+        {
+          name: "React.js",
+          icon: <FaReact />
+        },
+        {
+          name: "JavaScript",
+          icon: <SiJavascript />
+        },
+        {
+          name: "CSS3",
+          icon: <SiCss3 />
+        }
+      ],
+
+      github:
+        "https://github.com/aravind78250/my-portfolio",
+
+      demo:
+        "https://my-portfolio-gamma-lyart-24.vercel.app/"
     }
   ];
 
   return (
     <section className="projects" id="projects">
+
       <div className="projects-container">
 
         <div className="section-heading">
+
           <p>What I've Built</p>
 
           <h2>
             My <span>Projects</span>
           </h2>
+
         </div>
+
 
         <motion.div
           className="projects-grid"
@@ -91,41 +130,61 @@ function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
+
           {projects.map((project, index) => (
+
             <motion.div
               className="project-card"
               key={index}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.2 }}
             >
+
               <div className="project-number">
                 0{index + 1}
               </div>
 
-              <h3>{project.title}</h3>
+
+              <h3>
+                {project.title}
+              </h3>
+
 
               <p className="project-description">
                 {project.description}
               </p>
 
-              <div className="technology-list">
-                {project.technologies.map((tech, techIndex) => (
-                  <span
-                    key={techIndex}
-                    className="technology"
-                  >
-                    {tech.icon && (
-                      <span className="technology-icon">
-                        {tech.icon}
-                      </span>
-                    )}
 
-                    {tech.name}
-                  </span>
-                ))}
+              <div className="technology-list">
+
+                {project.technologies.map(
+                  (tech, techIndex) => (
+
+                    <span
+                      key={techIndex}
+                      className="technology"
+                    >
+
+                      {tech.icon && (
+                        <span className="technology-icon">
+                          {tech.icon}
+                        </span>
+                      )}
+
+                      {tech.name}
+
+                    </span>
+
+                  )
+                )}
+
               </div>
 
+
               <div className="project-links">
+
+                {/* GitHub button */}
+
                 <a
                   href={project.github}
                   target="_blank"
@@ -135,20 +194,30 @@ function Projects() {
                   GitHub
                 </a>
 
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaExternalLinkAlt />
-                  Live Demo
-                </a>
+
+                {/* Live Demo button */}
+
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaExternalLinkAlt />
+                    Live Demo
+                  </a>
+                )}
+
               </div>
+
             </motion.div>
+
           ))}
+
         </motion.div>
 
       </div>
+
     </section>
   );
 }
